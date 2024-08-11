@@ -41,3 +41,12 @@ int main()
    }
    return 0;
 }
+
+/*
+DRY RUN
+Enter the plaintext : 
+SDG
+1836
+ Encrypted cipher text : EEH
+ Decrypted cipher text : SDG
+*/
