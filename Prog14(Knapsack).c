@@ -36,7 +36,7 @@ int main()
   int v[10][10],n,i,j,w[10],value[10],m,result;
   printf("Enter the number of items:");
   scanf("%d",&n);
-  printf("Enter the weights of %d items:/n",n);
+  printf("Enter the weights of %d items:\n",n);
   for(i=1;i<=n;i++)
    {
      scanf("%d",&w[i]);
