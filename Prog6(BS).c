@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>  // Include this header for srand and rand
+#include <time.h>
 
 // Function to perform binary search
 int binarySearch(int array[], int size, int key) {
@@ -28,38 +30,44 @@ int binarySearch(int array[], int size, int key) {
 
 int main() {
     int size, key, result;
- srand(time(0));
+
     // Taking input for the size of the array
     printf("Enter the number of elements in the array: ");
     scanf("%d", &size);
 
     int array[size];
 
-    // Taking input for the elements of the array
-    printf("Enter %d elements in sorted order:\n", size);
+    // Seed the random number generator
+    srand(time(0));
+
+    // Fill the array with random numbers
+    printf("Randomly generated array:\n");
     for (int i = 0; i < size; i++) {
-        scanf("%d", &array[i]);
+        array[i] = rand() % 100;  // Generate random numbers in the range 0 to 99
+        printf("%d ", array[i]);
     }
+    printf("\n");
 
     // Taking input for the element to be searched
     printf("Enter the element to search: ");
     scanf("%d", &key);
 
-      clock_t start, end;
+    clock_t start, end;
     double cpu_time_used;
-    
+
     start = clock();
     // Performing binary search
     result = binarySearch(array, size, key);
- end = clock();
-    
+    end = clock();
+
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\nTime taken to sort the phone numbers: %f seconds\n", cpu_time_used);
+
     if (result != -1) {
         printf("Element is present at index %d\n", result);
     } else {
         printf("Element is not present in the array\n");
     }
 
+    printf("\nTime taken to search the element: %f seconds\n", cpu_time_used);
     return 0;
 }
