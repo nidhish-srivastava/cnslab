@@ -28,7 +28,7 @@ int binarySearch(int array[], int size, int key) {
 
 int main() {
     int size, key, result;
-
+ srand(time(0));
     // Taking input for the size of the array
     printf("Enter the number of elements in the array: ");
     scanf("%d", &size);
@@ -45,9 +45,16 @@ int main() {
     printf("Enter the element to search: ");
     scanf("%d", &key);
 
+      clock_t start, end;
+    double cpu_time_used;
+    
+    start = clock();
     // Performing binary search
     result = binarySearch(array, size, key);
-
+ end = clock();
+    
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\nTime taken to sort the phone numbers: %f seconds\n", cpu_time_used);
     if (result != -1) {
         printf("Element is present at index %d\n", result);
     } else {
