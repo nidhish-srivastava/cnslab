@@ -46,8 +46,8 @@ int main()
 
 /*
 Enter the number of cities: 5
-    Enter the matrix representation:
-            0 1 1 1 0
+Enter the matrix representation:
+0 1 1 1 0
 0 0 0 0 1
 0 0 0 0 0
 0 0 0 0 0
